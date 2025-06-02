@@ -38,7 +38,7 @@ namespace ConsoleTelegramServer
             WaitingForText,
             WaitingForDate
         }
-        private static readonly Dictionary<long, (Step currentStep, TodoListTask task)> UserAdding = new();
+        private readonly Dictionary<long, (Step currentStep, TodoListTask task)> UserAdding = new();
         public async Task HandleUpdateAsync(ITelegramBotClient bot, Update update, CancellationToken cancellationToken)
         {
             if (update.Type == UpdateType.Message && update?.Message?.Type == MessageType.Text)
