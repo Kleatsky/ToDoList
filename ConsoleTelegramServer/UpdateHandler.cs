@@ -32,8 +32,6 @@ namespace ConsoleTelegramServer
     {
 
         public delegate void MessageHandler(object sender, string message);
-        //public event MessageHandler OnHandleUpdateStarted;
-        //public event MessageHandler OnHandleUpdateCompleted;
         public enum Step
         {
             WaitingForType,
