@@ -20,7 +20,6 @@ namespace ConsoleTelegramServer.DB
                 userId = await connection.QueryFirstOrDefaultAsync<long>(query, new { TaskId = taskId });
             }
 
-            //LoG
             ServerConsoleWrite.SimpleWrite($"Задача обнавлена: ID {taskId}");
             return userId;
         }

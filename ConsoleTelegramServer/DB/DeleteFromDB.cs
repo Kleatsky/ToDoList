@@ -19,7 +19,6 @@ namespace ConsoleTelegramServer.DB
             {
                 await connection.QueryAsync(query, new { TaskId = taskId });
 
-                //Log
                 ServerConsoleWrite.SimpleWrite($"Задача сохранена в БД: ID={taskId}");
             }
         }

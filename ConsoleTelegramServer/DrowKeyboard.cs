@@ -130,7 +130,6 @@ namespace ConsoleTelegramServer
                 cancellationToken: cancellationToken
             );
 
-            //LOG
             ServerConsoleWrite.SimpleWrite("/showtasksByType — показываем меню выбора типа задач.");
         }
         public static async Task DeleteTaskByTypeKeyBoard(ITelegramBotClient bot, long chatId, long userId, CancellationToken cancellationToken)
@@ -172,7 +171,6 @@ namespace ConsoleTelegramServer
                 cancellationToken: cancellationToken
             );
 
-            //LOG
             ServerConsoleWrite.SimpleWrite("/showtasksByType — показываем меню выбора типа задач.");
         }
         public static async Task RedrowTasks(ITelegramBotClient bot, Update update,

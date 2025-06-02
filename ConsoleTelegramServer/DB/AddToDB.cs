@@ -19,7 +19,6 @@ namespace ConsoleTelegramServer.DB
             {
                 var id = await connection.ExecuteAsync(query, task);
 
-                //Log
                 ServerConsoleWrite.SimpleWrite($"Задача сохранена (заглушка): usert_id:{task.TelegramUserId} {task.TextTask}," +
                     $" Тип: {task.Priority}, До: {task.DateTask}");
             }

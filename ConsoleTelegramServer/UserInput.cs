@@ -26,8 +26,6 @@ namespace ConsoleTelegramServer
                cancellationToken: cancellationToken
            );
 
-            //LOG
-            //Сделать внятное описание
             ServerConsoleWrite.SimpleWrite($"/start input from {update?.Message?.From?.Id}");
         }
         public static async Task ShowTasks(ITelegramBotClient bot, Update update, CancellationToken cancellationToken,
@@ -51,7 +49,6 @@ namespace ConsoleTelegramServer
                 );
             }
 
-            //LOG
             ServerConsoleWrite.SimpleWrite($"/showtasks input from {update?.Message?.From?.Id}");
         }
         public static async Task AddTask(ITelegramBotClient bot, Update update, CancellationToken cancellationToken,
@@ -70,9 +67,7 @@ namespace ConsoleTelegramServer
                    cancellationToken: cancellationToken
                );
 
-            //LOG
-            //Сделать внятное описание
-            ServerConsoleWrite.SimpleWrite($"/addtask input from {update?.Message?.From?.Id}");
+             ServerConsoleWrite.SimpleWrite($"/addtask input from {update?.Message?.From?.Id}");
         }
 
         internal static async Task DeleteTask(ITelegramBotClient bot, Update update, CancellationToken cancellationToken,
@@ -95,7 +90,6 @@ namespace ConsoleTelegramServer
                 );
             }
 
-            //LOG
             ServerConsoleWrite.SimpleWrite($"/showtasks input from {update?.Message?.From?.Id}");
         }
     }

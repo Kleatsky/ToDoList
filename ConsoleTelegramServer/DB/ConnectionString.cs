@@ -8,6 +8,6 @@ namespace ConsoleTelegramServer.DB
 {
     internal static class ConnectionString
     {
-        public static string connectionString { get; set; }
+        public static string? connectionString { get; set; }
     }
 }

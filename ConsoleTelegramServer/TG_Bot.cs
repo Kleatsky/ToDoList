@@ -18,7 +18,7 @@ namespace ConsoleTelegramServer
     {
         private static string _filePath = @"Token.txt";//файл с токеном
         private static string? _token;
-        private static string _dbFilePathPassword = @"db.password";//файл с токеном
+        private static string _dbFilePathPassword = @"db.password";//файл с паролем от бд
         private static string? _dbpassword;
         public static async Task Run()
         {
