@@ -24,7 +24,7 @@ namespace ConsoleTelegramServer
         {
             List<TodoListTask> todoListTasks = new List<TodoListTask>();
 
-            todoListTasks = await ShowFromDB.GetTaskWithTypeAsync(userId, taskType,cancellationToken);
+            todoListTasks = await ShowFromDB.GetTaskWithTypeAsync(userId, taskType, cancellationToken);
 
             return todoListTasks;
         }

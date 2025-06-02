@@ -405,3 +405,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /ConsoleTelegramServer/Token.txt
+/ConsoleTelegramServer/db.password

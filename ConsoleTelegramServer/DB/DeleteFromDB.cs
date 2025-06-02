@@ -13,14 +13,14 @@ namespace ConsoleTelegramServer.DB
     {
         public static async Task DeleteTaskAsync(long taskId, CancellationToken cancellationToken)
         {
-            string connectionString = "Host=localhost;Username=postgres;Password=12345;Database=ToDoList;Port=5432";
-
             var query = @"DELETE FROM tasks WHERE id = @TaskId;";
 
-            using (var connection = new NpgsqlConnection(connectionString))
+            using (var connection = new NpgsqlConnection(ConnectionString.connectionString))
             {
                 await connection.QueryAsync(query, new { TaskId = taskId });
-                Console.WriteLine($"Задача сохранена в БД: ID={taskId}");
+
+                //Log
+                ServerConsoleWrite.SimpleWrite($"Задача сохранена в БД: ID={taskId}");
             }
         }
     }

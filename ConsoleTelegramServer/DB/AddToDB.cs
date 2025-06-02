@@ -13,17 +13,15 @@ namespace ConsoleTelegramServer.DB
     {
         public static async Task SaveTaskAsync(TodoListTask task)
         {
-            string connectionString = "Host=localhost;Username=postgres;Password=12345;Database=ToDoList;Port=5432";
-
             var query = @"INSERT INTO tasks (telegram_user_id, text_task, priority, is_completed, datetask) VALUES (@TelegramUserId, @TextTask, @Priority, @IsCompleted, @DateTask)";
 
-            using (var connection = new NpgsqlConnection(connectionString))
+            using (var connection = new NpgsqlConnection(ConnectionString.connectionString))
             {
                 var id = await connection.ExecuteAsync(query, task);
-                Console.WriteLine($"Задача сохранена (заглушка): {task.TextTask}, Тип: {task.Priority}, До: {task.DateTask}");
 
-
-                //Console.WriteLine($"Задача сохранена в БД: {task.Text}, ID={id}");
+                //Log
+                ServerConsoleWrite.SimpleWrite($"Задача сохранена (заглушка): usert_id:{task.TelegramUserId} {task.TextTask}," +
+                    $" Тип: {task.Priority}, До: {task.DateTask}");
             }
         }
     }

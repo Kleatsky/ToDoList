@@ -6,7 +6,7 @@ namespace ConsoleTelegramServer
         static async Task Main(string[] args)
         {
             await TG_Bot.Run();
-            Console.WriteLine("Programm closed.");
+            ServerConsoleWrite.SimpleWrite("Programm closed.");
         }
     }
 }

@@ -19,7 +19,6 @@ namespace ConsoleTelegramServer
                             Update update, CancellationToken cancellationToken, Step step, TodoListTask task)
         {
 
-
             var message = update.Message;
             var chatId = message!.Chat.Id;
             string returnMessage = string.Empty;
@@ -41,6 +40,7 @@ namespace ConsoleTelegramServer
                         {
                             returnMessage = "Неверный тип задачи!";
                             isComplite = true;
+                            ServerConsoleWrite.ErrorWrite(returnMessage);
                         }
                     }
                     break;
@@ -57,6 +57,7 @@ namespace ConsoleTelegramServer
                     {
                         returnMessage = "Ошибка ввода текста задачи!";
                         isComplite = true;
+                        ServerConsoleWrite.ErrorWrite(returnMessage);
                     }
                     break;
 
@@ -79,6 +80,7 @@ namespace ConsoleTelegramServer
                     {
                         returnMessage = "Неверный формат даты. Используйте dd-MM-yyyy.";
                         isComplite = true;
+                        ServerConsoleWrite.ErrorWrite(returnMessage);
                     }
                     break;
             }

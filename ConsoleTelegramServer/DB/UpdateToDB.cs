@@ -12,15 +12,16 @@ namespace ConsoleTelegramServer.DB
     {
         public static async Task<long> ChangeIsComplitedAsync(long taskId)
         {
-            string connectionString = "Host=localhost;Username=postgres;Password=12345;Database=ToDoList;Port=5432";
-
             string query = @"UPDATE tasks SET is_completed = NOT is_completed WHERE id = @TaskId RETURNING telegram_user_id;";
 
             long userId;
-            using (var connection = new NpgsqlConnection(connectionString))
+            using (var connection = new NpgsqlConnection(ConnectionString.connectionString))
             {
                 userId = await connection.QueryFirstOrDefaultAsync<long>(query, new { TaskId = taskId });
             }
+
+            //LoG
+            ServerConsoleWrite.SimpleWrite($"Задача обнавлена: ID {taskId}");
             return userId;
         }
     }
